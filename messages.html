@@ -97,6 +97,17 @@
         $(document).ready(function() {
             $('#message').focus();
         });
+
+        // restricting user to write only 180 characters
+        $('#message').bind('keypress', function() {
+            let len = 180 - $(this).val().length;
+            $('#charactersLeft').text(len < 0 ? 0 : len);
+            if (len <= 0)
+                $(this).val($(this).val().substr(0, 179));
+            return false;
+            return true;
+
+        });
     </script>
 </body>
 
