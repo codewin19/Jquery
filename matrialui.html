@@ -23,7 +23,7 @@
             Bryan Cranston
           </span>
         </li>
-        <li class="mdl-list__item">
+        <li class="mdl-list__item" id="special">
             <span class="mdl-list__item-primary-content">
             Aaron Paul
           </span>
@@ -35,6 +35,17 @@
         </li>
     </ul>
 
+    <!-- Colored raised button -->
+    <button id="show" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+   Show
+  </button>
+
+    <!-- Accent-colored raised button with ripple -->
+    <button id="hide" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+   Hide
+  </button>
+
+
     <!-- inlcue material ui javascript -->
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <!-- import jquery -->
@@ -45,6 +56,23 @@
             $('li').dblclick(function() {
                 $(this).css('text-decoration', 'line-through');
             });
+
+            $('#special').click(function() {
+                alert("list item");
+            });
+
+            $('ul').click(function() {
+                alert("list");
+            });
+
+            $('#hide').click(function() {
+                $('#special').fadeOut(2000);
+            });
+
+            $('#show').click(function() {
+                $('#special').show();
+            });
+
         });
     </script>
 </body>
