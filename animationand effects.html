@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            font-size: 3rem;
+            height: 500px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            line-height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id='fade-in'>Fade In</button>
+    <button id="fade-out">Fade Out</button>
+    <button id='fade-toggle'>Fade Toggle</button>
+    <hr>
+    <button id='slide-up'>Slide up</button>
+    <button id="slide-down">slide down</button>
+    <button id='slide-toggle'>Slide Toggle</button>
+    <button id='stop'>Stop</button>
+    <hr>
+    <div id="box">BOX</div>
+    <hr>
+    <button id='move-left'> Move left</button>
+    <p id="test" style='width:100px;height:100px;background-color:red;position:relative;'></p>
+
+    <!-- include jquery here -->
+    <script src="jquery-3.5.1.min.js"></script>
+
+    <script>
+        $('#fade-in').click(function() {
+            alert("Fade In is  clicked");
+            $('#box').fadeIn(2000);
+
+        });
+
+        $('#fade-out').click(function() {
+            alert("Fade out is  clicked");
+            $('#box').fadeOut(2000);
+
+        });
+
+
+        $('#fade-toggle').click(function() {
+            // alert("Fade out is  clicked");
+            $('#box').fadeToggle(2000);
+
+        });
+
+        $('#slide-up').click(function() {
+            // alert("Fade out is  clicked");
+            $('#box').slideUp(2000);
+
+        });
+
+
+        $('#slide-down').click(function() {
+            // alert("Fade out is  clicked");
+            $('#box').slideDown(2000);
+
+        });
+
+        $('#slide-toggle').click(function() {
+            // alert("Fade out is  clicked");
+            $('#box').slideToggle(2000);
+
+        });
+
+        $('#stop').click(function() {
+            // alert("Fade out is  clicked");
+            $('#box').stop(1000);
+
+        });
+
+        $('#move-left').click(function() {
+            $('#test').animate({
+                left: '1000px',
+                transform: 'rotate(360deg)'
+            }, 5000);
+        });
+    </script>
+</body>
+
+</html>
