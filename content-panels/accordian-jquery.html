@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul li {
+            list-style: none;
+        }
+        
+        .accordion-panel {
+            display: none;
+        }
+        
+        .accordion-control {
+            padding: 0.5em 0;
+        }
+        
+        li {
+            border-bottom: 2px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class='accordion'>
+        <li>
+            <h3 class="accordion-control">Why Should I sell on Flipkart? <i class="fas fa-chevron-down"></i></h3>
+            <div class="accordion-panel">
+                Flipkart is the leader in Indian e-commerce with maximum online reach and highest credibility. With more than 10 crore registered customers, 10 million daily page visits and the lowest cost of doing business, we are the strongest partner to take your
+                products to customers all over India. We have sale events that give each seller an equal opportunity to grow their business online.
+            </div>
+        </li>
+
+        <li>
+            <h3 class="accordion-control">Who can sell on Flipkart? <i class="fas fa-chevron-down"></i></h3>
+            <div class="accordion-panel">
+                Anyone selling new and genuine products is welcome. In order to start selling, you need to have : <br />GSTIN<br />Cancelled Cheque<br />Sample Signatures
+            </div>
+        </li>
+
+
+        <li>
+            <h3 class="accordion-control">Can I offer both products and services on Flipkart? <i class="fas fa-chevron-down"></i></h3>
+            <div class="accordion-panel">
+                Currently, you can only sell products and not services on Flipkart.
+            </div>
+        </li>
+    </ul>
+</body>
+<!-- include jquery here -->
+<script src="jquery-3.5.1.min.js"></script>
+<script>
+    $('.accordion-control').click(function() {
+        $(this).next().not(':animated').slideToggle(1000, function() {
+            var arrow = $(this).prev().children('.fas');
+            if (arrow.hasClass('fa-chevron-down')) {
+                arrow.removeClass('fa-chevron-down');
+                arrow.addClass('fa-chevron-up');
+            } else {
+                arrow.removeClass('fa-chevron-up');
+                arrow.addClass('fa-chevron-down');
+            }
+        });
+    });
+</script>
+
+</html>
